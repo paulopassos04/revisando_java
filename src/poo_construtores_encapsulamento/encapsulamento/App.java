@@ -1,4 +1,4 @@
-package poo_construtores_encapsulamento.construtores.exemplo1;
+package poo_construtores_encapsulamento.encapsulamento;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -20,6 +20,12 @@ class App {
         int quantity = sc.nextInt();
 
         Product product = new Product(name, price, quantity);
+
+        product.setName("Computer");
+        System.out.println("updated name: " +product.getName());
+
+        product.setPrice(1200);
+        System.out.println("updated price: " +product.getPrice());
 
         System.out.println();
         System.out.println("Product data: " + product);

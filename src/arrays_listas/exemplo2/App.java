@@ -13,7 +13,7 @@ public class App {
 
         Product[] vetor = new Product[n]; 
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < vetor.length; i++) {
             sc.nextLine();
             String name = sc.nextLine();
             double price = sc.nextDouble();
@@ -21,7 +21,7 @@ public class App {
         }
 
         double sum = 0.0;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < vetor.length; i++) {
             sum += vetor[i].getPrice();
         }
 

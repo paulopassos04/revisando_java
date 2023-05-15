@@ -8,6 +8,8 @@ import java.time.format.DateTimeFormatter;
 public class Exemplo01 {
     public static void main(String[] args){
 
+        // Instanciando data e hora
+
         DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 

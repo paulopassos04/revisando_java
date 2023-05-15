@@ -8,6 +8,8 @@ import java.time.ZoneId;
 public class Exemplo03 {
     public static void main(String[] args) {
 
+        // Convertendo data e hora global, em data e hora local.
+
         LocalDate d04 = LocalDate.parse("2023-05-15");
         LocalDateTime d05 = LocalDateTime.parse("2023-05-15T12:46:45");
         Instant d06 = Instant.parse("2023-05-15T01:30:00Z");

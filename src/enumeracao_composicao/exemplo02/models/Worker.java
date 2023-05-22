@@ -1,6 +1,7 @@
 package enumeracao_composicao.exemplo02.models;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class Worker {
@@ -14,12 +15,11 @@ public class Worker {
 
     public Worker(){}
 
-    public Worker(String name, WorkerLevel level, Double baseSalary, Department department, List<HourContract> contracts) {
+    public Worker(String name, WorkerLevel level, Double baseSalary, Department department) {
         this.name = name;
         this.level = level;
         this.baseSalary = baseSalary;
         this.department = department;
-        this.contracts = contracts;
     }
 
     public void addContract(HourContract contract){
@@ -30,7 +30,19 @@ public class Worker {
         contracts.remove(contract);
     }
 
-    
+    public double income(int year, int month) {
+        double sum = baseSalary;
+        Calendar cal = Calendar.getInstance();
+        for (HourContract c : contracts) {
+            cal.setTime(c.getDate());
+            int c_year = cal.get(Calendar.YEAR);
+            int c_month = 1 + cal.get(Calendar.MONTH);
+            if (year == c_year && month == c_month) {
+                sum += c.totalValue();
+            }
+        }
+        return sum;
+    }
 
     public String getName() {
         return name;
@@ -64,11 +76,4 @@ public class Worker {
         this.department = department;
     }
 
-    public List<HourContract> getContracts() {
-        return contracts;
-    }
-
-    public void setContracts(List<HourContract> contracts) {
-        this.contracts = contracts;
-    }
 }

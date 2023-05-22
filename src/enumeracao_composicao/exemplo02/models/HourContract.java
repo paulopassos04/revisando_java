@@ -1,30 +1,28 @@
 package enumeracao_composicao.exemplo02.models;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class HourContract {
 
-    private LocalDate date;
+    private Date date;
     private Double valuePerHour;
     private Integer hours;
 
-    public HourContract(){}
+    public HourContract() {
+    }
 
-    public HourContract(LocalDate date, Double valuePerHour, Integer hours) {
+    public HourContract(Date date, Double valuePerHour, Integer hours) {
         this.date = date;
         this.valuePerHour = valuePerHour;
         this.hours = hours;
     }
 
-    public double totalValue(){
-        return valuePerHour * hours;
-    }
-
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -42,5 +40,9 @@ public class HourContract {
 
     public void setHours(Integer hours) {
         this.hours = hours;
+    }
+
+    public double totalValue() {
+        return valuePerHour * hours;
     }
 }
